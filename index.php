@@ -2,34 +2,29 @@
 
 require_once 'Bicycle.php';
 require_once 'Car.php';
+require_once 'Truck.php';
+$bicycle = new Bicycle('blue', 1);
 
-$bike = new Bicycle('black', 3);
-var_dump($bike);
+echo $bicycle->forward();
 
-echo $bike->forward();
+var_dump($bicycle);
 
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
+echo $bicycle->forward();
 
-echo $bike->brake();
+echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed() . ' km/h' . '<br>';
 
-echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
+echo $bicycle->brake();
 
-echo $bike->brake();
+echo '<br> Vitesse du vélo : ' . $bicycle->getCurrentSpeed() . ' km/h' . '<br>';
 
-$rockrider = new Bicycle('yellow', 20);
-
-$tornado = new Bicycle('white', 30);
-
-$tornado->forward();
-
-var_dump($rockrider);
-
-$tornado->dump();
+echo $bicycle->brake();
 
 /*-----------------------------------------------------------------------*/
-$car = new Car('green', 50);
-var_dump($car);
+$car = new Car('green', 4, 'electric');
 
+echo $car->forward();
+
+var_dump($car);
 echo $car->forward();
 
 echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed() . ' km/h' . '<br>';
@@ -40,10 +35,27 @@ echo '<br> Vitesse de la voiture : ' . $car->getCurrentSpeed() . ' km/h' . '<br>
 
 echo $car->brake();
 
+var_dump(Car::ALLOWED_ENERGIES);
 
+/*--------------------------------------------------------------------------*/
+$Truck = new Truck(123, 'brown', 4, 'electric');
 
+$Truck->setStorage(200);
 
+var_dump($Truck);
 
+echo '<br> Le chargement du camion est de : ' . $Truck->storageCapacity . 'kg' . '<br>';
 
+echo $Truck->isFillingOrFull();
+
+$Truck2 = new Truck(203, 'red', 5, 'fuel');
+
+$Truck2->setStorage(200);
+
+var_dump($Truck2);
+
+echo '<br> Le chargement du camion est de : ' . $Truck2->storageCapacity . 'kg' . '<br>';
+
+echo $Truck2->isFillingOrFull();
 
 ?>
