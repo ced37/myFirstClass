@@ -3,6 +3,11 @@
 require_once 'Bicycle.php';
 require_once 'Car.php';
 require_once 'Truck.php';
+require_once 'HighWay.php';
+require_once 'MotorWay.php';
+require_once 'PedestrianWay.php';
+require_once 'ResidentialWay.php';
+
 $bicycle = new Bicycle('blue', 1);
 
 echo $bicycle->forward();
@@ -58,4 +63,7 @@ echo '<br> Le chargement du camion est de : ' . $Truck2->storageCapacity . 'kg' 
 
 echo $Truck2->isFillingOrFull();
 
-?>
+/*----------------------------------------------------------------------------*/
+
+$motorway = new MotorWay(4, 130);
+var_dump($motorway);
