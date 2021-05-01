@@ -70,3 +70,19 @@ $motorWay->addVehicle($Truck);
 $motorWay->addVehicle($car);
 $motorWay->addVehicle($bicycle);
 var_dump($motorWay->getCurrentVehicles());
+
+/*------------------------------------------------------------------------------*/
+
+try{
+    echo $car->forward(). "\n";
+
+ } catch(Exception $hasParkBrake){
+
+    echo "Attention ! frein à main enclenché !  : ". $hasParkBrake->getMessage() . "\n";
+
+ } finally{
+
+    echo "Ma voiture roule comme un donut !" . "\n";
+
+}
+
