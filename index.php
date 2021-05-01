@@ -65,5 +65,8 @@ echo $Truck2->isFillingOrFull();
 
 /*----------------------------------------------------------------------------*/
 
-$motorway = new MotorWay(4, 130);
-var_dump($motorway);
+$motorWay = new MotorWay();
+$motorWay->addVehicle($Truck);
+$motorWay->addVehicle($car);
+$motorWay->addVehicle($bicycle);
+var_dump($motorWay->getCurrentVehicles());

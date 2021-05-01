@@ -8,14 +8,15 @@ class Car extends Vehicle
     public const ALLOWED_ENERGIES = [
 
         'fuel',
-
         'electric',];
+
     private string $energy;
     private int $energyLevel;
+
     public function __construct(string $color, int $nbSeats, string $energy)
     {
         parent::__construct($color, $nbSeats);
-        $this->setEnergy = $energy;
+        $this->setEnergy($energy);
     }
     public function getEnergy(): string
     {
